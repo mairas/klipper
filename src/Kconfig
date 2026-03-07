@@ -189,6 +189,10 @@ config NEED_SOS_FILTER
     bool
     depends on WANT_TRIGGER_ANALOG
     default y
+config WANT_PROBE_SCAN
+    bool
+    depends on HAVE_GPIO
+    default y
 menu "Optional features (to reduce code size)"
     depends on HAVE_LIMITED_CODE_SIZE
 config WANT_ADC
@@ -220,6 +224,9 @@ config WANT_NEOPIXEL
     depends on HAVE_GPIO
 config WANT_PULSE_COUNTER
     bool "Support measuring fan tachometer GPIO pins"
+    depends on HAVE_GPIO
+config WANT_PROBE_SCAN
+    bool "Support continuous bed scanning with binary probe"
     depends on HAVE_GPIO
 comment "LCD chips"
 config WANT_ST7920

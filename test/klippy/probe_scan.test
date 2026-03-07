@@ -1,0 +1,12 @@
+# Test case for probe_scan module (continuous bed scanning with binary probe)
+CONFIG probe_scan.cfg
+DICTIONARY atmega2560.dict
+
+# Home the printer
+G28
+
+# Basic moves to verify config loaded correctly
+G1 F6000
+G1 Z10
+G1 X50 Y50
+G1 Z5
